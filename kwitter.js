@@ -4,8 +4,8 @@ key2 = "";
 function LogIn(){
     username = document.getElementById("UserName").value;
     password = document.getElementById("Password").value;
-    key1 = "UserName" + n;
-    key2 = "Password" + n;
+    key1 = "UserName";
+    key2 = "Password";
     localStorage.setItem(key1,username);
     localStorage.setItem(key2,password);
     n = n + 1;
@@ -22,8 +22,8 @@ function Login(){
     key3 = key1;
     key4 = key2;
     for(i = n ; i>-1 ; i -= 1){
-        key3 = "UserName" + i;
-        key4 = "Password" + i;
+        key3 = "UserName";
+        key4 = "Password";
         realUs = localStorage.getItem(key3);
         realPs = localStorage.getItem(key4);
         if(username == realUs && password == realPs){

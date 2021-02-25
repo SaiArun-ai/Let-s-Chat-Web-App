@@ -19,25 +19,15 @@ var firebaseConfig = {
    //End code
    });});}
    getData();
-
-function LogOut(){
-    window.location = "index2.html";
+   function LogOut(){
+    window.location = "kwitter_room.html";
 }
-var n = 0;
-function addRoom(){
-  password = document.getElementById("Password").value;
-  if(password.length == 0){
-  }else{
-    room_name = document.getElementById("room_name").value;
-    firebase.database().ref("/").update({
-      purpose:"adding room name"
+function Send(){
+    msg = document.getElementById("msg").value;
+    firebase.database().ref(room_name).push({
+        Message : msg,
+        name:username,
+        likes:0
     });
-    localStorage.setItem("roomname",room_name);
-    window.location = "kwitter_page.html";
-  }  
-}
-function redirectToRoomName(name){
-  console.log(name);
-  localStorage.setItem("room_name",roomname);
-  window.location= "kwitter_page.html";
+    document.getElementById("msg").innerHTML = "";
 }
